@@ -14,7 +14,7 @@ function createMap(){
       maxZoom: 18,
       zoomOffset: -1,
       id: "mapbox/streets-v11",
-      accessToken: "pk.eyJ1IjoicnVzc2lhbnZvZGthNjUiLCJhIjoiY2tpaXE0emh3MDF1bjJxbjZnajd3NDF0YSJ9.6Iuvmv7nXzsScE9YWkGgoQ"
+      accessToken: API_KEY
     }).addTo(myMap);
 }
 
@@ -70,7 +70,7 @@ legend.onAdd = function(map){
         labels = ['0-1','1-2','2-3','3-4','4-5','5+'];
 
     for (var k = 0; k < magScale.length; k++) {
-            div.innerHTML += '<i style="background:' + circleColor(magScale[k]) + '"></i> ';
+            div.innerHTML += '<i style="background:' + circleColor(magScale[k]) + '"></i> ' + (labels[k] ? labels[k] + '<br>' : '+');
         }
     return div;
 };
