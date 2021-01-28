@@ -21,22 +21,22 @@ function createMap(){
 
 function circleColor(magnitude){
     if (magnitude < 1) {
-      return "#ccff33"
+      return "#bdff20"
     }
     else if (magnitude < 2) {
-      return "#ffff33"
+      return "#fff941"
     }
     else if (magnitude < 3) {
-      return "#ffcc33"
+      return "#ffc039"
     }
     else if (magnitude < 4) {
-      return "#ff9933"
+      return "#ff863c"
     }
     else if (magnitude < 5) {
-      return "#ff6633"
+      return "#ff6835"
     }
     else {
-      return "#ff3333"
+      return "#ff1e20"
     }
 }
 
@@ -51,7 +51,7 @@ d3.json(geoURL, function (geoData) {
         console.log(info[j]);
         var coordinates = [info[j].geometry.coordinates[1], info[j].geometry.coordinates[0]];
         L.circle(coordinates, {
-                fillOpacity: 0.75,
+                fillOpacity: 0.9,
                 color: "black",
                 fillColor: circleColor(info[j].properties.mag),
                 radius: (info[j].properties.mag) * 10000
