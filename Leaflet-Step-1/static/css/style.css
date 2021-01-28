@@ -36,12 +36,15 @@ html {
   height: 100%;
 }
 
-
+.legend {
+  color: #0d0d0d;
+  background: #FFFFFF;
+}
 
 .legend i {
-  width: 30px;
-  height: 30px;
+  width: 18px;
+  height: 18px;
   float: left;
-  margin-right: 50px;
+  margin-right: 15px;
   opacity: 1;
 }
