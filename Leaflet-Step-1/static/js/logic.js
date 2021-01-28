@@ -1,4 +1,3 @@
-
 // Gets data from USGS
 var geoURL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
 
@@ -44,6 +43,7 @@ function circleColor(magnitude){
 // Empty Array to fill data
 var info = [];
 
+// Create the circle layer
 d3.json(geoURL, function (geoData) {
     for (var i = 0; i < geoData.features.length; i++){
         info.push(geoData.features[i]);
