@@ -19,6 +19,7 @@ function createMap(){
     }).addTo(myMap);
 }
 
+// Picks the color of the circle based on magnitude
 function circleColor(magnitude){
     if (magnitude < 1) {
       return "#bdff20"
@@ -40,6 +41,7 @@ function circleColor(magnitude){
     }
 }
 
+// Empty Array to fill data
 var info = [];
 
 d3.json(geoURL, function (geoData) {
@@ -55,7 +57,8 @@ d3.json(geoURL, function (geoData) {
                 color: "black",
                 fillColor: circleColor(info[j].properties.mag),
                 radius: (info[j].properties.mag) * 10000
-            }).addTo(myMap);
+            }).bindPopup("<h3>" + info[j].properties.place + "</h3> <h6>" + coordinates[1] + ", " + coordinates[0] +
+        "</h6> <hr> <h4>Magnitude: " + info[j].properties.mag + "</h4>").addTo(myMap);
         }
 });
 
