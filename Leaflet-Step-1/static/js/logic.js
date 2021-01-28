@@ -62,6 +62,18 @@ d3.json(geoURL, function (geoData) {
         }
 });
 
+var legend = L.control({position: 'bottomright'});
+
+legend.onAdd = function(map){
+    var div = L.DomUtil.create("div", "info legend"),
+        magScale = [0,1,2,3,4,5],
+        labels = ['0-1','1-2','2-3','3-4','4-5','5+'];
+
+    for (var k = 0; k < magScale.length; k++) {
+            div.innerHTML += '<i style="background:' + circleColor(magScale[k]) + '"></i> ';
+        }
+    return div;
+};
+
+legend.addTo(myMap);
 createMap();
-
-
