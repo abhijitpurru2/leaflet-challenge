@@ -62,8 +62,10 @@ d3.json(geoURL, function (geoData) {
         }
 });
 
+//Creates location for the legend
 var legend = L.control({position: 'bottomright'});
 
+// Creates legend
 legend.onAdd = function(map){
     var div = L.DomUtil.create("div", "info legend"),
         magScale = [0,1,2,3,4,5],
@@ -75,5 +77,8 @@ legend.onAdd = function(map){
     return div;
 };
 
+// Adds legend to map
 legend.addTo(myMap);
+
+// Creates map object
 createMap();
